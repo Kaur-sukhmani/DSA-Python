@@ -1,0 +1,1 @@
+t = {city_names: random.randint(20, 30) for city in city_names}
