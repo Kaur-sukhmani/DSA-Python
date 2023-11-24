@@ -1,0 +1,47 @@
+# Insert Node at beginning of Linked List
+"""Input: List = 10->20->30->40->null, Node = 0
+Output: 0->10->20->30->40->null
+Explanation: Inserted the given node at the beginning of the linked list."""
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList:
+    def __init__(self, value):
+        new_node = Node(value)
+        self.head = new_node
+        self.tail = new_node
+        self.length = 1
+        
+    def insert(self, value):
+        new_node = Node(value)
+        if self.head == None:
+            self.tail = self.head = new_node
+            self.length = 1
+        else:
+            new_node.next = self.head
+            self.head = new_node
+    def print_list(self ):
+        current = self.head
+        while current:
+            print(current.value, end=" -> ")
+            current = current.next
+        print("null")
+new_linked_list = LinkedList(10)
+new_linked_list.insert(20)
+new_linked_list.insert(30)
+new_linked_list.insert(40)
+
+# Print the current list
+new_linked_list.print_list()
+
+# Inserting node 0 at the beginning
+new_linked_list.insert(0)
+
+# Print the updated list
+new_linked_list.print_list()
+
+        
+    
+        
